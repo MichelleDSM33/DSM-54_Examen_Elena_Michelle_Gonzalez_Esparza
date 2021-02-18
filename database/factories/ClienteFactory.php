@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Categoria;
+use App\Models\Cliente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class CategoriaFactory extends Factory
+class ClienteFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Categoria::class;
+    protected $model = Cliente::class;
 
     /**
      * Define the model's default state.
@@ -23,6 +23,10 @@ class CategoriaFactory extends Factory
     {
         return [
             'nombre' => $this->faker->name,
+            'direccion' => $this->faker->text(200),
+            'telefono' => $this->faker->phoneNumber,
+            'status' => rand(1,2),
+            'tipo' => rand(1,2),
         ];
     }
 }
